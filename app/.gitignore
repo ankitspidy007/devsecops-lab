@@ -1,0 +1,4 @@
+cat <<EOF > .gitignore
+node_modules/
+dependency-report/
+EOF
