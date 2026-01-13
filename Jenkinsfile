@@ -14,9 +14,9 @@ tools {
 
     stage('Install Dependencies') {
       steps {
-        sh 'cd app && npm install'
+        // "node" must match the name you set in Global Tool Configuration
         nodejs('node20') { 
-            sh 'npm install'
+            sh 'cd app && npm install'
         }
       }
     }
