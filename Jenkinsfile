@@ -27,6 +27,17 @@ tools {
       }
     }
 
+    stage('Trivy Image Scan') {
+  steps {
+    sh '''
+      trivy image \
+        --severity HIGH,CRITICAL \
+        --exit-code 1 \
+        devsecops-app
+    '''
+  }
+}
+    
     stage('Run Container') {
       steps {
         sh 'docker run -d -p 3000:3000 devsecops-app'
