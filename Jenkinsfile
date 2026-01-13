@@ -15,6 +15,9 @@ tools {
     stage('Install Dependencies') {
       steps {
         sh 'cd app && npm install'
+        nodejs('node20') { 
+            sh 'npm install'
+        }
       }
     }
 
